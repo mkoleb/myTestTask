@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1497471892168" stop="1497471914600" version="1.4.23.HOTFIX1" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : rozetka</name>
+    <title>Default Suite : rozetka</title>
+    <test-cases>
+        <test-case start="1497471892179" stop="1497471902970" status="passed">
+            <name>addingGoodsToShoppingCart</name>
+            <title>Добавление товара в корзину</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="home"/>
+                <label name="thread" value="14228@home.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1497471902994" stop="1497471909390" status="passed">
+            <name>goodsPage</name>
+            <title>Выбор товара из результатов поиска (первого в списке результатов поиска)</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="home"/>
+                <label name="thread" value="14228@home.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1497471909394" stop="1497471914330" status="passed">
+            <name>openDestination</name>
+            <title>Проверка работы поиска</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="home"/>
+                <label name="thread" value="14228@home.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
