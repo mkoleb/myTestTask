@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class ShoppingCartPage {
 
@@ -20,18 +21,18 @@ public class ShoppingCartPage {
 
     public ShoppingCartPage(WebDriver driver) {this.driver = driver;}
 
-    //@Step
+    @Step("Appearence of a pop-up window after buying some product")
     public void popUpAppearenceWhenBuying(){
         WebElement webelement = (new WebDriverWait(driver, waits))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(shoppingCartPopUp)));
     }
 
-    //@Step
+    @Step("Closing pop-up window")
     public void closeCurrentPopUp(){
         driver.findElement(By.name(closePopUp)).click();
     }
 
-    //@Step
+    @Step("Checking whether the product is presented in shopping cart")
     public void wasTheProductAddedToShoppingCart(){
         WebElement goToShoppingCart = (new WebDriverWait(driver, waits))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id(goToshoppingCart)));

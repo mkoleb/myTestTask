@@ -1,22 +1,24 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import pages.MainPage;
 import pages.ProductPage;
 import pages.SearchQueryGoodsListPage;
-import pages.MainPage;
 import pages.ShoppingCartPage;
+import ru.yandex.qatools.allure.annotations.Title;
 
 public class SearchFieldValidation {
 
     WebDriver driver = new FirefoxDriver();
 
-    @BeforeTest
+    @BeforeSuite
     public void beforeTest(){
         System.setProperty("webdriver.firefox.driver", "geckodriver.exe");
     }
 
+    @Title("Проверка работы поиска")
     @Test
     public void openDestination(){
         MainPage mainPage = new MainPage(driver);
@@ -31,6 +33,7 @@ public class SearchFieldValidation {
         searchQueryGoodsListPage.appleGoodsPresenceInList();
     }
 
+    @Title("Выбор товара из результатов поиска (первого в списке результатов поиска)")
     @Test
     public void goodsPage(){
         MainPage mainPage = new MainPage(driver);
@@ -43,13 +46,11 @@ public class SearchFieldValidation {
         searchQueryGoodsListPage.waitForText();
         searchQueryGoodsListPage.chooseFirstProductInList();
         productPage.isItAProductPage();
-        System.out.println("it is product page");
         productPage.isThereAPhoto();
-        System.out.println("photo");
         productPage.isThereAProductReview();
-        System.out.println("passed");
     }
 
+    @Title("Добавление товара в корзину")
     @Test
     public void addingGoodsToShoppingCart(){
         MainPage mainPage = new MainPage(driver);
@@ -70,5 +71,4 @@ public class SearchFieldValidation {
     public void closeDriver(){
         driver.close();
     }
-
 }
